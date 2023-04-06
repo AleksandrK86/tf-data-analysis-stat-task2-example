@@ -10,7 +10,7 @@ def solution(p: float, x: np.array) -> tuple:
     # Измените код этой функции
     # Это будет вашим решением
     # Не меняйте название функции и её аргументы
-    a = (x-(1/2-np.exp(1)))*2/25
+    a = (x-0.5)*2/25
     alpha = 1 - p
     return a.mean() - np.sqrt(np.var(a)) * norm.ppf(1 - alpha / 2) / np.sqrt(len(a)), \
            a.mean() - np.sqrt(np.var(a)) * norm.ppf(alpha / 2) / np.sqrt(len(a))
