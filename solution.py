@@ -10,6 +10,7 @@ def solution(p: float, x: np.array) -> tuple:
     # Измените код этой функции
     # Это будет вашим решением
     # Не меняйте название функции и её аргументы
-    t=5
-    return (2*(  -1/2 - (-x).min() )/(t*t))*2, \
-           (2*( -np.log(1-p)/(x.size) - 1/2 - (-x).min() )/(t*t))*2
+    a = ((x+0.5)*2)/25
+    alpha = 1 - p
+    return a.mean() - np.sqrt(np.var(a)) * norm.ppf(1 - alpha / 2) / np.sqrt(len(a)), \
+           a.mean() - np.sqrt(np.var(a)) * norm.ppf(alpha / 2) / np.sqrt(len(a))
