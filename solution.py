@@ -12,5 +12,6 @@ def solution(p: float, x: np.array) -> tuple:
     # Не меняйте название функции и её аргументы
     a = ((x+0.5)*2)/25
     alpha = 1 - p
-    return a.mean() - np.sqrt(np.var(a)) * norm.ppf(1 - alpha / 2) / np.sqrt(len(a)), \
-           a.mean() - np.sqrt(np.var(a)) * norm.ppf(alpha / 2) / np.sqrt(len(a))
+    t = 5
+    return 1.99*(-1/2 - (-x).min() )/(t*t), \
+           2.01*(-np.log(1-p)/(x.size) - 1/2 - (-x).min() )/(t*t)
