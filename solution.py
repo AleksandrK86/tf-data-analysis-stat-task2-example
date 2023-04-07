@@ -11,5 +11,5 @@ def solution(p: float, x: np.array) -> tuple:
     # Это будет вашим решением
     # Не меняйте название функции и её аргументы
     t=5
-    return 2*(  -1/2 - (-x).min() )/(t*t), \
-           2*( -np.log(1-p)/(x.size) - 1/2 - (-x).min() )/(t*t)
+    return (2*(  -1/2 - (-x).min() )/(t*t))*2, \
+           (2*( -np.log(1-p)/(x.size) - 1/2 - (-x).min() )/(t*t))*2
